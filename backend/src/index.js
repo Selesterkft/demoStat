@@ -1,3 +1,12 @@
-require('dotenv').config();
+//import logger from './logger';
+import app from './app';
+//import { connectDb } from './db/Mongoose';
 
-console.log("Hello World5!", process.env.SQL_CONNECT);
+const PORT = process.env.PORT || 3000;
+
+//connectDb();
+
+app.listen(PORT, () => {
+    console.log(`App is listening on ${PORT}`)
+  //logger.info(`App is listening on ${PORT}`);
+});
