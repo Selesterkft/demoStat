@@ -1,16 +1,17 @@
 import express from 'express';
 //import morgan from 'morgan';
 
-import { api } from './routes';
+import { api, reccs } from './routes';
 //import logger from './logger';
-//import errorHandler from './middlewares/error-handler';
+import errorHandler from './middlewares/error-handler';
 
 const app = express();
 
 //app.use(morgan('combined', { stream: logger.stream }));
 
 app.use('/api', api);
+app.use('/reccs', reccs);
 
-//app.use(errorHandler);
+app.use(errorHandler);
 
 export default app;
